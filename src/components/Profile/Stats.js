@@ -1,25 +1,25 @@
 import React from 'react';
 
-import s from './StatsList.module.scss';
+import s from './StatsList.module.css';
 
 const Stats = ({ followers, views, likes }) => {
     return (
         <ul className={s.statsList}>
-                <li className={s.statsItem}>
+            <li className={s.statsItem}>
                 <span className={s.label}>Followers</span>
                 <span className={s.quantity}>{followers}</span>
-                </li>
-                <li className={s.statsItem}>
+            </li>
+            <li className={s.statsItem}>
                 <span className={s.label}>Views</span>
                 <span className={s.quantity}>{views}</span>
-                </li>
-                <li className={s.statsItem}>
+            </li>
+            <li className={s.statsItem}>
                 <span className={s.label}>Likes</span>
                 <span className={s.quantity}>{likes}</span>
-                </li>
-            </ul>
+            </li>
+        </ul>
 
     )
-}
+};
 
-export default Stats
+export default Stats;

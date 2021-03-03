@@ -1,12 +1,12 @@
 import React from 'react';
 
 
-// import './App.css';
+import './App.css';
 
-import Profile from './Profile';
-import FriendList from './FriendList';
-import Statistics from './Statistics';
-import TransactionHistory from './TransactionHistory';
+import Profile from './components/Profile/Profile';
+import Statistics from './components/Statistics/Statistics';
+import FriendList from './components/FriendList/FriendList';
+import TransactionHistory from './components/TransactionHistory/TransactionHistory';
 
 import userData from './data/user.json';
 import statsData from './data/statistical-data.json';
@@ -23,8 +23,12 @@ const App = () => {
         tag={userData.tag}
         location={userData.location}
         avatar={userData.avatar}
-        stats={userData.stats}
-      />
+        stats={userData.stats} 
+       />
+
+      <Statistics title="Upload stats" items={statsData} /> 
+      <FriendList friends={friends} />
+      <TransactionHistory transactions={transactions} />
     </>
   )
 }
