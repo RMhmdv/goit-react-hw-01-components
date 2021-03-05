@@ -1,0 +1,18 @@
+.item {
+  list-style: none;
+  padding: 15px;
+  width: 100%;
+  border: 1px solid rgb(141, 137, 137, 0.5);
+}
+
+.percentage {
+  font-size: 22px;
+} 
+
+span {
+  display: block;
+}
+
+.label {
+  margin-bottom: 10px;
+}

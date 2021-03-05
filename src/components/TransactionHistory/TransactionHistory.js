@@ -1,18 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
+import TransactionTr from './TransactionTr';
 
 import s from './TransactionHistory.module.css';
 
-
-const TransactionTr = ({ id, type, amount, currency }) => {
-  return (
-        <tr key={id}>
-          <td>{type}</td>
-          <td>{amount}</td>
-          <td>{currency}</td>
-        </tr>
-
-  )
-}
 
 const TransactionBody = ({ items }) => {
   if (items.length === 0) return null;
@@ -39,6 +31,11 @@ const TransactionHistory = ({ transactions }) => {
   )
 };
 
+TransactionBody.propTypes = {
+  items: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.string.isRequired,
+  })).isRequired,
+};
 
 
 export default TransactionHistory;

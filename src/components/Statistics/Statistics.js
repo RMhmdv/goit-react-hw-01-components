@@ -1,24 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
+import StatListItem from './StatListItem';
+
 
 import s from './Statistics.module.css';
 
-const randomColor = () => {
-  const random = () => Math.floor(Math.random() * 256);
-
-  return `rgba( ${random()} , ${random()} , ${random()} )`;
-};
-
-const StatListItem = ({id, label, percentage }) => {
-  return (
-    <li className={s.item}
-            key={id}
-            style={{ backgroundColor: randomColor() }}>
-        <span className={s.label}>{label}</span>
-        <span className={s.percentage}>{percentage}%</span>
-    </li>
-  )
-
-}
 
 const StatsList = ({ items }) => {
   if (items.length === 0) return null;
@@ -39,5 +26,13 @@ const Statistics = ({items}) => {
     </section>
   );
 };
+
+StatsList.propTypes = {
+  items: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.string.isRequired,
+  })).isRequired,
+};
+
+
 
 export default Statistics;
